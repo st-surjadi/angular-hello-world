@@ -1,0 +1,23 @@
+<mat-sidenav-container class="example-container" class="h-full">
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="openSidebar()" (closed)="closeSidebar()" class="w-10/12 sm:w-3/12">
+        <div class="w-full inline-block text-right">
+            <button mat-button (click)="sidenav.toggle()" class="custom-mat-button">
+                <mat-icon aria-hidden="false" aria-label="close-sidenav" class="text-sm">close</mat-icon>
+            </button>
+        </div>
+        <ul class="p-1">
+            <li>Home</li>
+            <li>State Management</li>
+        </ul>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+        <!-- <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+        <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p> -->
+        
+        <button mat-button (click)="sidenav.toggle()">
+            <mat-icon aria-hidden="false" aria-label="open-sidenav">menu</mat-icon>
+        </button>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
