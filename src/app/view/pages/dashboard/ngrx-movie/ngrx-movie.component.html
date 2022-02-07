@@ -1,1 +1,35 @@
-<p>ngrx-movie works!</p>
+<div class="ngrx-movie-container">
+    <h2>Create Movie</h2>
+    <form [formGroup]="createMovieForm" class="example-form block mb-3" (ngSubmit)="createMovie()">
+        <div class="block w-100 md:w-1/2">
+            <mat-form-field class="mat-form-field w-100" appearance="fill">
+              <mat-label>Movie Name</mat-label>
+              <input matInput [value]="createMovieForm.get('name')!.value" type="text" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="block w-100 md:w-1/2">
+            <mat-form-field class="mat-form-field w-100" appearance="fill">
+              <mat-label>Total Earning</mat-label>
+              <input matInput [value]="createMovieForm.get('earning')!.value" type="text" formControlName="earning">
+            </mat-form-field>
+        </div>
+        <div class="block w-100 md:w-1/2 flex justify-between items-start">
+            <mat-form-field class="mat-form-field w-1/2" appearance="fill" >
+                <mat-label>Release Date</mat-label>
+                <input matInput [matDatepicker]="picker" [value]="createMovieForm.get('date')!.value" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <button class="h-12" mat-raised-button color="primary" [disabled]="!createMovieForm.valid">Create Movie</button>
+        </div>
+    </form>
+    <div class="movie-list grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div *ngFor="let movie of movies$ | async" class="col-movie">
+            <mat-card>
+                <mat-card-title>{{ movie.name }}</mat-card-title>
+                <mat-card-subtitle>{{ movie.date }}</mat-card-subtitle>
+                <mat-card-content>{{ movie.earning }}</mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

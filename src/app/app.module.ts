@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { tutorialReducer } from 'src/core/state-management/reducer/tutorial.reducer';
+import { movieReducer } from 'src/core/state-management/reducer/movie.reducer';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { tutorialReducer } from 'src/core/state-management/reducer/tutorial.redu
     CoreModule.forRoot(),
     HttpClientModule,
     StoreModule.forRoot({
-      tutorials: tutorialReducer
+      tutorials: tutorialReducer,
+      movies: movieReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 10
