@@ -1,0 +1,10 @@
+<div class="read-container">
+    <ul class="read-list">
+        <li *ngFor="let tutorial of tutorials | async; index as i" class="tutorial-item flex align-center">
+            <a [href]="tutorial.url" target="_blank" class="tutorial-link">{{ tutorial.name }}</a>
+            <a type="button" (click)="remove(i)">
+                <mat-icon aria-hidden="false" aria-label="open-sidenav" class="text-danger">close</mat-icon>
+            </a>
+        </li>
+    </ul>
+</div>

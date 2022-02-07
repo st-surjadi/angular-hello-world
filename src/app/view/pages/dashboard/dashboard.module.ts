@@ -16,7 +16,7 @@ const Material = [
   MatSidenavModule,
   MatCheckboxModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
 ]
 
 @NgModule({

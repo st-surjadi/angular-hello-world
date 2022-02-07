@@ -1,0 +1,15 @@
+<div class="create-container">
+    <form [formGroup]="tutorialForm" (ngSubmit)="addTutorial()">
+        <div class="form-group">
+            <input #tutorialName placeholder="Name" class="rounded-8 p-2 border-1 border-gray-400 focus:outline-none" id="tutorialName" type="text" formControlName="tutorialName" maxlength="50" />
+            <mat-error app-error-message [formControlField]="tutorialForm.get('tutorialName')"></mat-error>
+        </div>
+        <div class="form-group">
+            <input #tutorialName placeholder="Url" class="rounded-8 p-2 border-1 border-gray-400 focus:outline-none" id="tutorialUrl" type="text" formControlName="tutorialUrl" />
+            <mat-error app-error-message [formControlField]="tutorialForm.get('tutorialUrl')"></mat-error>
+        </div>
+        <button [disabled]="!tutorialForm.valid" class="bg-slate-400 p-2 rounded-full hover:cursor-pointer disabled:opacity-75 disabled:cursor-default">
+            Add Tutorial
+        </button>
+    </form>
+</div>

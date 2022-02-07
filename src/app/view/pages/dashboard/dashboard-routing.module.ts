@@ -8,10 +8,14 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-        {
-            path: 'home',
-            component: HomeComponent
-        }
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'state-management',
+        loadChildren: () => import('./state-management/state-management.module').then(m => m.StateManagementModule)
+      }
     ]
   }
 ];
