@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'state-management',
         loadChildren: () => import('./state-management/state-management.module').then(m => m.StateManagementModule)
+      },
+      {
+        path: 'ngrx-movie',
+        loadChildren: () => import('./ngrx-movie/ngrx-movie.module').then(m => m.NgrxMovieModule)
       }
     ]
   }

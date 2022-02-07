@@ -6,8 +6,7 @@
             </button>
         </div>
         <ul class="p-1">
-            <li><a routerLink="home">Home</a></li>
-            <li><a routerLink="state-management/read">State Management</a></li>
+            <li *ngFor="let nav of navList"><a [routerLink]="nav.link">{{ nav.name }}</a></li>
         </ul>
     </mat-sidenav>
   
